@@ -1,4 +1,4 @@
---Welcome to my analysis of the TOP 500 companies.  This will showcase my use of the following:
+--Welcome to my analysis of the TOP Fortune 500 companies.  This will showcase my use of the following:
      --Grouping data using a CASE statement.
      --Use of HAVING clause to determine something interesting about the data per category.
      --Use  of logical operators like AND or OR to filter the data in an interesting way.
