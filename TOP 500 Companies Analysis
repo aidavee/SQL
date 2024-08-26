@@ -1,0 +1,24 @@
+--Welcome to my analysis of the TOP 500 companies.  This will showcase my use of the following:
+     --Grouping data using a CASE statement.
+     --Use of HAVING clause to determine something interesting about the data per category.
+     --Use  of logical operators like AND or OR to filter the data in an interesting way.
+     --Use of aggregate function like AVG, SUM, COUNT, MAX, and/or MIN to return summary statistics about the data.
+
+
+
+--1.  Categorize companies on whether or not they provide healthcare using a CASE statement.
+--2.  Then Categorize companies based on the number of paid days off given.
+
+SELECT 
+company_name,
+industry,
+CASE
+WHEN healthcare_benefits = 1 THEN 'Provides Healthcare'
+ELSE 'No Healthcare'
+END AS healthcare_status,
+CASE
+WHEN paid_time_off_days >= 20 THEN 'Generous PTO'
+WHEN paid_time_off_days BETWEEN 15 AND 19 THEN 'Moderate PTO'
+ELSE 'Limited PTO'
+END AS pto_category
+FROM fortune_companies;
