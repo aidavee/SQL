@@ -94,3 +94,17 @@ WHERE (industry = 'Technology' OR industry = 'Healthcare')
 AND employees > 2500
 AND healthcare_benefits = 1;
 
+
+--Calculate the average revenue, the total number of employees, and the minimum and maximum average employee tenure across different industries.
+
+SELECT 
+industry, 
+AVG(revenue) AS avg_revenue, 
+SUM(employees) AS total_employees, 
+MIN(avg_employee_tenure) AS min_employee_tenure, 
+MAX(avg_employee_tenure) AS max_employee_tenure
+FROM 
+fortune_companies
+GROUP BY 
+industry;
+
