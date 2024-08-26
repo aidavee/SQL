@@ -78,3 +78,10 @@ WHEN paid_time_off_days BETWEEN 15 AND 19 THEN 'Moderate PTO'
 ELSE 'Limited PTO'
 END AS pto_category
 FROM fortune_companies;
+
+-- Use a HAVING clause to determine something interesting about the data per category.
+
+SELECT industry, AVG(revenue) AS avg_revenue
+FROM fortune_companies
+GROUP BY industry
+HAVING AVG(revenue) > 300.0;
